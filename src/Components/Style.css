@@ -1,0 +1,206 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing:border-box;
+    font-family:"poppins",sans-serif;
+}
+body{
+    background-image: url("https://i0.wp.com/free4kwallpapers.com/uploads/wallpaper/wide-minimalistic-landscape-wallpaper-1920x1080-wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(39,39,39,0.4);
+
+
+}
+.nav{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top:0;
+    display: flex;
+    justify-content: space-around;
+    line-height: 100px;
+    background: linear-gradient(rgba(39,39,39,0.6),transparent);
+    z-index: 100;
+
+}
+.nav-logo p{
+color:white;
+font-size: 28px;
+font-weight:bold;
+}
+.nav-items ul{
+    display: flex;
+/* gap:10px; */
+
+}
+.nav-items ul{
+    list-style-type: none;
+
+}
+ .nav-items ul  .link{
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    /* padding-bottom: 15px;  */
+    margin:0 25px;
+
+} 
+.link:hover{
+    border-bottom:2px solid #fff;
+}
+.nav-button .btn{
+width:130px;
+height:40px ;
+padding: 10px;
+font-weight:bold;
+background: rgba(39,39,39,0.4);
+/* color:white; */
+border-radius: 30px;
+cursor: pointer;
+transition: .3s ease;
+}
+
+#registerBtn{
+    margin-left: 15px;
+    background: rgba(255, 255, 255, 0.7);
+
+
+}
+#loginBtn{
+    background: rgba(255, 255, 255, 0.7);
+}
+#registerBtn:hover{
+     /* background: rgba(255, 255, 255, 0.3);  */
+     background-color: green;
+}
+#loginBtn:hover{
+    /* background: rgba(255, 255, 255, 0.3);  */
+    background-color: green;
+}
+
+.nav-items-btn{
+    display: none;
+
+}
+.form-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:512px;
+    height: 420px;
+    overflow:hidden;
+    
+}
+.register-container{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+
+}
+.top span{
+    color:#fff;
+    margin-left: 5px;
+}
+.top span a{
+    font-weight: bold;;
+    color: #fff;
+    margin-left:5px;
+}
+h1{
+    color:#fff;
+    font-size: 30px;
+    text-align: center;
+    padding:10px 0 30px 0;
+
+}
+.two-forms{
+    display: flex;
+    gap:15px;
+}
+.input-field{
+    font-size: 15px;
+    background: rgba(84, 72, 72, 0.253);
+    color:black;
+    height: 60px;
+    width:100%;
+    padding:0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline:none;
+    transition:2s ease;
+}
+#alignment{
+    margin-top: 12px;
+}
+.input-field:hover,.input-field:focus{
+    background:rgba(255,255,255,0.25);
+}
+ ::-webkit-input-placeholder{
+    color: #fff;
+    
+}
+.submit{
+    font-size: 15px;
+    font-weight: bold;
+    color:#fff;
+    height: 45px;
+    width: 100%;
+    border:none;
+    border-radius: 30px;
+    outline: none;
+    background:green ;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    margin-top: 12px;
+}
+.submit:hover{
+    background-color:deeppink;
+    
+}
+.two-col{
+    display:flex;
+    justify-content: space-between;
+    color:#fff;
+    font-size: small;
+    margin-top: 10px;
+
+}
+.one label{
+    color: black;
+    font-size: 15px;
+}
+.two-col one{
+    display: flex;
+    gap:5px;
+}
+.two label a{
+    text-decoration: none;
+    color:black;
+    font-size: 15px;
+}
+.two label a:hover{
+    text-decoration: underline;
+
+}
+.login-container{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out
+
+}
+.display{
+    color: maroon;
+    font-size: large;
+    font-weight: bold;
+}
+
+
