@@ -54,35 +54,81 @@
 
 //using USEPARAMS
 
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+// import React, { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
 
+
+// const About = () => {
+//   const [email, setEmail] = useState("");
+//   const params = useParams();
+//   console.log("email : ",params.email);
+
+
+//   useEffect(() => {
+//     setEmail(params.email);
+//   }, []);
+  
+//   return (
+//     <div>
+//       <div>
+//         {email && (
+//           <div>
+//             <h1>Email: {email}</h1>
+//           </div>
+//         )}
+//       </div>
+
+//     </div>
+//   )
+// }
+
+// export default About;
+
+import { useEffect, useState } from "react";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
+import storageHandler from './Helper/storageHandler';
+
+import React from 'react'
 
 const About = () => {
-  const [email, setEmail] = useState("");
-  const params = useParams();
-  console.log("email : ",params.email);
-
-
-  useEffect(() => {
-    setEmail(params.email);
-  }, []);
-  
+  const[email,setEmail]=useState("");
+  useEffect(()=>{
+    const data=storageHandler.getLocalData()
+    setEmail(data?.email);
+      
+  },[])
+   
   return (
     <div>
-      <div>
-        {email && (
-          <div>
-            <h1>Email: {email}</h1>
-          </div>
-        )}
-      </div>
-
+      <h1>About - {email}</h1>
     </div>
   )
 }
 
 export default About;
+
+
+
+
+
+
+// mport { useEffect, useState } from "react";
+// import { useLocation, useParams, useSearchParams } from "react-router-dom";
+// import storageHandler from "../../helper/storageHandler";
+
+// const Dashboard = () => {
+//     const [email, setEmail] = useState("")
+
+    
+//     useEffect(() => {
+//         const data = storageHandler.getLocalData()
+//         setEmail(data?.email)
+//     }, [])
+
+//     return <h1>Dashboard - {email}</h1>
+// }
+// export default Dashboard
+
 
 
 

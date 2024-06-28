@@ -204,3 +204,19 @@ h1{
 }
 
 
+.nav-button .log_out{
+    width:130px;
+height:40px ;
+padding: 10px;
+font-weight:bold;
+background: rgba(39,39,39,0.4);
+/* color:white; */
+border-radius: 30px;
+cursor: pointer;
+transition: .3s ease;
+margin-top: 10px;
+
+}
+.log_out:hover{
+    background: rgba(255, 255, 255, 0.7);
+}

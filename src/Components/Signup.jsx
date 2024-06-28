@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import './Style.css'
-import { Link, useNavigate } from 'react-router-dom';
+
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import storageHandler from './Helper/storageHandler';
 
 
 
@@ -8,7 +9,8 @@ function SignupForm() {
   const dataList = { firstname: "", lastname: "", email: "", password: "" };
   const [inputData, setInputData] = useState(dataList);
   const [flag, setFlag] = useState(false);
-  const[submitted,setSubmitted]=useState(false);
+  const Navigate=useNavigate();
+  // const[submitted,setSubmitted]=useState(false);
 
   function handleData(e) {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
@@ -16,12 +18,18 @@ function SignupForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!inputData.firstname || !inputData.lastname || !inputData.email || !inputData.password) {
+     if (!inputData.firstname || !inputData.lastname || !inputData.email || !inputData.password) {
       alert("All fields are mandatory");
-    } else {
+     } else {
       console.log(inputData); // Display data in console
-      setFlag(true);
-      setSubmitted(true);
+       setFlag(true);
+      // setSubmitted(true);
+
+      // localStorage.setItem("user",JSON.stringify(inputData));
+      storageHandler.setLocalData({ inputData });
+    
+      
+       Navigate("/login");
     }
   }
 
@@ -58,8 +66,8 @@ function SignupForm() {
               {/* <input type="button" className="submit" value="Register"></input> */}
                <button type="submit" className="submit" value="Login" >Submit</button> 
 
-              {submitted &&
-              (<Link to="/login" >Go to Login</Link>)} 
+              {/* {submitted &&
+              (<Link to="/login" >Go to Login</Link>)}  */}
 
             </div>
             <div className="two-col">

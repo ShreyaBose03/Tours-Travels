@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import storageHandler from './Helper/storageHandler';
+
 
 function LoginForm() {
   const [inputData, setInputData] = useState({ email: '', password: '' });
-  const navigate = useNavigate();
+  // const[email,setEmail]=useState("");
+   const navigate = useNavigate();
 
   function handleData(e) {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
@@ -19,11 +22,32 @@ function LoginForm() {
     const password=inputData.password;
     console.log("password",password);
 
+    
+      storageHandler.getLocalData({ inputData });
+      navigate("/about");
+      
+
+
+     
+
+    
+    // const loggedUser=JSON.parse(localStorage.getItem("user"));
+    // if(inputData.email===loggedUser.email && inputData.password===loggedUser.password)
+    //   {
+    //     localStorage("loggedIn",true);
+    //     navigate("/home");
+    //   }
+    //   else{
+    //     alert("wrong email & password.please check carefully");
+    //   }
+
+    
+
     // navigate('/about', { state: { email: email, password: password } }); //useLocation
 
     // navigate(`/about?email=${email}`);//useSearchParams
 
-    navigate(`/about/${email}`);
+    // navigate(`/about/${email}`); //useparams
 
   }
 

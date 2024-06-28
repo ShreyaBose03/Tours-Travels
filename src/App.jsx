@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './Components/Header';
+import Header from './Components/NavigationBar/Header';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Home from './Components/Home';
 import About from './Components/About';
+import Layout from './Components/Layout/Layout';
+import AuthHeader from './Components/NavigationBar/AuthHeader';
+import './Style.css';
+
 import {
   BrowserRouter as Router,
-  Route,Routes
+  Route, Routes
 } from "react-router-dom";
 
 function App() {
@@ -16,14 +20,17 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* <Header/>  
+        <AuthHeader/>
+        */}
       <Routes>
-        <Route path="/" element={<Signup />} />
-         <Route path="/login" element={<Login />} />  
-        <Route path="/home" element={<Home />} />
-        <Route path="/about/:email" element={<About />} />
-        <Route path="/signup" element={<Signup />} />
-
+        <Route path="/" element={<Layout />} >
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Signup />} />
+        </Route>
 
 
       </Routes>
@@ -34,8 +41,13 @@ function App() {
     
        {action === "signup" ? <SignupForm setAction={setAction} /> : <LoginForm setAction={setAction} />} 
      </div> */}
+
     </>
   );
 }
 
 export default App;
+
+
+
+
