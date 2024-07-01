@@ -45,7 +45,7 @@ function SignupForm() {
         <form onSubmit={handleSubmit}>
           <div className="registration-container" id="register">
             <div className="top" >
-              <span>Have an account?<a href="#" onClick={() => setAction("login")}>Login</a> </span>
+              <span>Have an account?<Link to="/login" >Login</Link> </span>
               <h1>Sign Up</h1>
             </div>
             <div className="two-forms">

@@ -27,7 +27,7 @@ const Layout = () => {
         <>
         
             {user ? <AuthHeader user={user} logout={logout} /> : <Header />}
-             <Outlet/>
+             <Outlet context={setUser}/>
         </>
     )
 }

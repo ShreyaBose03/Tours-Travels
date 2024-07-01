@@ -8,6 +8,8 @@ import Home from './Components/Home';
 import About from './Components/About';
 import Layout from './Components/Layout/Layout';
 import AuthHeader from './Components/NavigationBar/AuthHeader';
+import UnAuth from './ProtectedRoute/UnAuth';
+import WithAuth from './ProtectedRoute/WithAuth';
 import './Style.css';
 
 import {
@@ -25,11 +27,13 @@ function App() {
         */}
       <Routes>
         <Route path="/" element={<Layout />} >
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+        
+          <Route path="/login" element={<UnAuth><Login/></UnAuth>} />
+          
+          <Route path="/signup" element={<UnAuth><Signup /> </UnAuth>} />
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/" element={<Signup />} />
+          <Route path="/about" element={<WithAuth> <About /> </WithAuth>} />
+          <Route path="/" element={<UnAuth><Signup /> </UnAuth>} />
         </Route>
 
 

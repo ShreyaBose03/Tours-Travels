@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 import storageHandler from './Helper/storageHandler';
 
 
 function LoginForm() {
   const [inputData, setInputData] = useState({ email: '', password: '' });
   // const[email,setEmail]=useState("");
+ const setUser=useOutletContext();
    const navigate = useNavigate();
+   
 
   function handleData(e) {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
@@ -23,8 +25,13 @@ function LoginForm() {
     console.log("password",password);
 
     
-      storageHandler.getLocalData({ inputData });
+      storageHandler.setLocalData({ inputData });
+      setUser({email});
       navigate("/about");
+
+      
+        
+      
       
 
 
@@ -58,7 +65,7 @@ function LoginForm() {
           <div className="login-container" id="login">
             <div className="top">
               <span>
-                Don't have an account?<a href="#">Sign Up</a>
+                Don't have an account?<Link to="/signup" >Sign Up</Link>
               </span>
               <h1>Login</h1>
             </div>
@@ -85,7 +92,7 @@ function LoginForm() {
             </div>
             
             <div className="input-box">
-              <button type="submit" className="submit">Submit</button>
+              <button type="submit" className="submit" >Submit</button>
             </div>
 
             <div className="two-col">
